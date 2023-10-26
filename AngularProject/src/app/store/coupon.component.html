@@ -1,0 +1,77 @@
+<style>
+  body {
+    background: #eee;
+  }
+
+  .card {
+    width: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    background:rgb(253, 2, 165);
+    border: none;
+    color: #fff;
+    height: 350px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    /* justify-content: center */
+  }
+
+  .container {
+    height: 100vh;
+  }
+
+  .card h1 {
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+
+  .card span {
+    font-size: 28px;
+  }
+
+  .image {
+    position: absolute;
+    opacity: 0.1;
+    left: 0;
+    top: 0;
+  }
+
+  .image2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.1;
+  }
+</style>
+
+<div class="d-flex justify-content-center align-items-center container">
+  <div class="d-flex card text-center">
+    <button
+      type="button"
+      class="btn-close align-self-end"
+      aria-label="Close"
+      routerLink="/store"
+    ></button>
+    <div class="image">
+      <img src="https://i.imgur.com/DC94rZe.png" width="150" />
+    </div>
+    <div class="image2">
+      <img src="https://i.imgur.com/DC94rZe.png" width="150" />
+    </div>
+    <h1>10% OFF</h1>
+    <span class="d-block">On Everything</span><span class="d-block">Today</span>
+    <div class="mt-4"><small>With Code : summersale2023</small></div>
+    <button
+      style="background-color: chartreuse;"
+      class="btn"
+      (click)="applyCoupon()"
+      (click)="showSuccessMessage()"
+    >
+      Apply
+    </button>
+    <div *ngIf="successMessageVisible" class="alert alert-success">
+      Success! Your Coupon is Applied.
+    </div>
+  </div>
+</div>
